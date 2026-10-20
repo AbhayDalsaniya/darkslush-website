@@ -1,0 +1,4 @@
+# /en/ is a common guess for the English site. English lives at the root.
+/en /      301
+/en/ /     301
+/en/* /:splat 301
