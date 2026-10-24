@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-nsou3le4><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow, noarchive"><title>Admin — Dark Slush</title><link rel="icon" href="/darkslush-website/favicon.svg"><link rel="stylesheet" href="/darkslush-website/_astro/index.BaXKq9Jq.css"></head><body data-astro-cid-nsou3le4><!-- ═══════════════════════════════════════════════════════════════
+     LOGIN SCREEN
+════════════════════════════════════════════════════════════════ --><div id="login-screen" data-astro-cid-nsou3le4><div class="login-box" data-astro-cid-nsou3le4><div class="login-logo" data-astro-cid-nsou3le4>Dark Slush</div><div class="login-sub" data-astro-cid-nsou3le4>Admin panel · Sign in to continue</div><div class="login-error" id="login-error" data-astro-cid-nsou3le4>Incorrect username or password.</div><form id="login-form" autocomplete="off" data-astro-cid-nsou3le4><div class="field" data-astro-cid-nsou3le4><label for="inp-user" data-astro-cid-nsou3le4>Username</label><input id="inp-user" type="text" autocomplete="off" spellcheck="false" required data-astro-cid-nsou3le4></div><div class="field" data-astro-cid-nsou3le4><label for="inp-pass" data-astro-cid-nsou3le4>Password</label><input id="inp-pass" type="password" autocomplete="off" required data-astro-cid-nsou3le4></div><button class="btn btn--gold" style="width:100%;margin-top:.5rem" type="submit" data-astro-cid-nsou3le4>Sign in</button></form></div></div><!-- ═══════════════════════════════════════════════════════════════
+     APP (shown after login)
+════════════════════════════════════════════════════════════════ --><div id="app" data-astro-cid-nsou3le4><div class="topbar" data-astro-cid-nsou3le4><div data-astro-cid-nsou3le4><span class="topbar-brand" data-astro-cid-nsou3le4>⬤ Dark Slush Admin</span><span class="topbar-user" id="topbar-user" data-astro-cid-nsou3le4></span></div><button class="btn btn--ghost btn--sm" id="logout-btn" data-astro-cid-nsou3le4>Sign out</button></div><div class="tabs" data-astro-cid-nsou3le4><button class="tab-btn active" data-tab="products" data-astro-cid-nsou3le4>Products</button><button class="tab-btn" data-tab="add" data-astro-cid-nsou3le4>Add Product</button></div><div class="content" data-astro-cid-nsou3le4><!-- ── Products panel ──────────────────────────────────── --><div class="panel active" id="panel-products" data-astro-cid-nsou3le4><div class="section-head" data-astro-cid-nsou3le4><h2 data-astro-cid-nsou3le4>Product Catalogue</h2><p data-astro-cid-nsou3le4>Read from <code data-astro-cid-nsou3le4>src/data/products.json</code> + <code data-astro-cid-nsou3le4>src/i18n/en.json</code> at build time.</p></div><div class="stats" id="stats-row" data-astro-cid-nsou3le4></div><div class="filter-bar" data-astro-cid-nsou3le4><input type="search" id="filter-search" placeholder="Search name or id…" data-astro-cid-nsou3le4><select id="filter-cat" data-astro-cid-nsou3le4><option value="" data-astro-cid-nsou3le4>All categories</option><option value="bars" data-astro-cid-nsou3le4>bars</option><option value="bonbons" data-astro-cid-nsou3le4>bonbons</option><option value="designer" data-astro-cid-nsou3le4>designer</option><option value="healthy-bites" data-astro-cid-nsou3le4>healthy-bites</option><option value="healthy-bars" data-astro-cid-nsou3le4>healthy-bars</option></select><select id="filter-status" data-astro-cid-nsou3le4><option value="" data-astro-cid-nsou3le4>All status</option><option value="active" data-astro-cid-nsou3le4>Active</option><option value="inactive" data-astro-cid-nsou3le4>Inactive</option><option value="dummy" data-astro-cid-nsou3le4>Sample / dummy</option></select><button class="btn btn--ghost btn--sm" id="clear-filters" data-astro-cid-nsou3le4>Clear</button></div><div class="table-wrap" data-astro-cid-nsou3le4><table id="product-table" data-astro-cid-nsou3le4><thead data-astro-cid-nsou3le4><tr data-astro-cid-nsou3le4><th data-astro-cid-nsou3le4>ID / slug</th><th data-astro-cid-nsou3le4>Name</th><th data-astro-cid-nsou3le4>Category</th><th data-astro-cid-nsou3le4>Cocoa %</th><th data-astro-cid-nsou3le4>Tags</th><th data-astro-cid-nsou3le4>Status</th><th data-astro-cid-nsou3le4>Shelf life</th><th data-astro-cid-nsou3le4>Box 6</th></tr></thead><tbody id="product-tbody" data-astro-cid-nsou3le4></tbody></table></div><div class="empty" id="no-results" style="display:none" data-astro-cid-nsou3le4>No products match the filter.</div></div><!-- ── Add product panel ───────────────────────────────── --><div class="panel" id="panel-add" data-astro-cid-nsou3le4><div class="section-head" data-astro-cid-nsou3le4><h2 data-astro-cid-nsou3le4>Add / Submit Product Info</h2><p data-astro-cid-nsou3le4>Fill in the details and send via WhatsApp. The product will be added to the JSON manually after review.</p></div><div class="form-card" data-astro-cid-nsou3le4><div class="form-note" data-astro-cid-nsou3le4><strong data-astro-cid-nsou3le4>How this works:</strong> Submitting opens WhatsApp with all details pre-filled as a message to Dark Slush. The ID/slug is auto-generated from the name — confirm it is unique before saving to the JSON file. Fields marked * are required.</div><form id="add-form" data-astro-cid-nsou3le4><div class="form-grid" data-astro-cid-nsou3le4><div class="field" data-astro-cid-nsou3le4><label for="f-name" data-astro-cid-nsou3le4>Product name *</label><input id="f-name" type="text" placeholder="e.g. Strawberry Citrus Bonbon" required data-astro-cid-nsou3le4></div><div class="field" data-astro-cid-nsou3le4><label for="f-slug" data-astro-cid-nsou3le4>ID / slug (auto-filled)</label><input id="f-slug" type="text" placeholder="strawberry-citrus-bonbon" readonly style="opacity:.6;cursor:not-allowed" data-astro-cid-nsou3le4></div><div class="field" data-astro-cid-nsou3le4><label for="f-cat" data-astro-cid-nsou3le4>Category *</label><select id="f-cat" required data-astro-cid-nsou3le4><option value="" data-astro-cid-nsou3le4>Choose…</option><option value="bars" data-astro-cid-nsou3le4>bars</option><option value="bonbons" data-astro-cid-nsou3le4>bonbons</option><option value="designer" data-astro-cid-nsou3le4>designer</option><option value="healthy-bites" data-astro-cid-nsou3le4>healthy-bites</option><option value="healthy-bars" data-astro-cid-nsou3le4>healthy-bars</option></select></div><div class="field" data-astro-cid-nsou3le4><label for="f-cocoa" data-astro-cid-nsou3le4>Cocoa % / type</label><input id="f-cocoa" type="text" placeholder="e.g. 55.5% dark / 34.5% milk" data-astro-cid-nsou3le4></div><div class="field" data-astro-cid-nsou3le4><label for="f-tags" data-astro-cid-nsou3le4>Tags (comma-separated)</label><input id="f-tags" type="text" placeholder="signature, seasonal, special" data-astro-cid-nsou3le4></div><div class="field" data-astro-cid-nsou3le4><label for="f-shelf" data-astro-cid-nsou3le4>Shelf life (days)</label><input id="f-shelf" type="number" placeholder="15" value="15" min="1" data-astro-cid-nsou3le4></div><div class="field" data-astro-cid-nsou3le4><label for="f-sizes" data-astro-cid-nsou3le4>Sizes / piece counts</label><input id="f-sizes" type="text" placeholder="60g / 100g  or  12 / 18 / 24 pcs" data-astro-cid-nsou3le4></div><div class="field" data-astro-cid-nsou3le4><label for="f-box6" data-astro-cid-nsou3le4>Box of 6?</label><select id="f-box6" data-astro-cid-nsou3le4><option value="yes" data-astro-cid-nsou3le4>Yes</option><option value="no" data-astro-cid-nsou3le4>No</option></select></div><div class="field form-full" data-astro-cid-nsou3le4><label for="f-desc" data-astro-cid-nsou3le4>Short description</label><input id="f-desc" type="text" placeholder="One-line description for the product card" data-astro-cid-nsou3le4></div><div class="field form-full" data-astro-cid-nsou3le4><label for="f-ing" data-astro-cid-nsou3le4>Ingredients</label><textarea id="f-ing" placeholder="Comma-separated ingredient list" data-astro-cid-nsou3le4></textarea></div><div class="field form-full" data-astro-cid-nsou3le4><label for="f-notes" data-astro-cid-nsou3le4>Additional notes</label><textarea id="f-notes" placeholder="Anything else to confirm with the client" data-astro-cid-nsou3le4></textarea></div></div><div class="form-actions" data-astro-cid-nsou3le4><button type="submit" class="btn btn--wa" data-astro-cid-nsou3le4>Send on WhatsApp</button><button type="button" class="btn btn--ghost" id="clear-form-btn" data-astro-cid-nsou3le4>Clear form</button></div><div class="success-msg" id="add-success" data-astro-cid-nsou3le4>WhatsApp opened with the product details. Add the product to <code data-astro-cid-nsou3le4>products.json</code> and <code data-astro-cid-nsou3le4>en.json</code> after confirming the details.</div></form></div></div></div><!-- /content --></div><!-- /app --><script>(function(){const clientUsers = "[{\"n\":\"abhay\",\"h\":\"35c1ad90d2b299d3482059a45e2e37ce12a2404822ebb6797a457cd0c3ae5d40\"},{\"n\":\"prit\",\"h\":\"2010c0a11616c9df4eb8e8797197be025ab56f0cff08421dccf039b22edea867\"},{\"n\":\"shreya\",\"h\":\"2010c0a11616c9df4eb8e8797197be025ab56f0cff08421dccf039b22edea867\"},{\"n\":\"pratiksha\",\"h\":\"2010c0a11616c9df4eb8e8797197be025ab56f0cff08421dccf039b22edea867\"}]";
+const clientProducts = "[{\"id\":\"signature-dark-bar-99\",\"category\":\"bars\",\"active\":true,\"sortOrder\":1,\"tags\":[\"signature\"],\"image\":\"/images/brand/brand\",\"box6\":true,\"cocoa\":\"99% African\",\"shelfLifeDays\":15,\"dummy\":true,\"imagePos\":\"62% 80%\",\"name\":\"Signature Dark Bar 99%\",\"description\":\"Intense, no-sugar dark chocolate made with African cocoa.\",\"ingredients\":\"African cocoa, cocoa butter.\"},{\"id\":\"indian-dark-bar-90\",\"category\":\"bars\",\"active\":true,\"sortOrder\":2,\"tags\":[\"signature\"],\"image\":\"/images/brand/brand\",\"box6\":true,\"cocoa\":\"90% Indian\",\"shelfLifeDays\":15,\"dummy\":true,\"imagePos\":\"78% 68%\",\"name\":\"Indian Dark Bar 90%\",\"description\":\"Smooth, rich dark chocolate made with Indian cocoa.\",\"ingredients\":\"Indian cocoa, cocoa butter.\"},{\"id\":\"rose-bonbon\",\"category\":\"bonbons\",\"active\":true,\"sortOrder\":3,\"tags\":[\"signature\"],\"image\":\"/images/brand/brand\",\"box6\":true,\"cocoa\":null,\"shelfLifeDays\":15,\"dummy\":true,\"imagePos\":\"52% 62%\",\"name\":\"Rose Bonbon\",\"description\":\"A handcrafted bonbon with an elegant floral touch.\",\"ingredients\":\"Sample text. To be confirmed by Dark Slush.\"},{\"id\":\"orange-zest-bonbon\",\"category\":\"bonbons\",\"active\":true,\"sortOrder\":4,\"tags\":[],\"image\":\"/images/brand/brand\",\"box6\":true,\"cocoa\":null,\"shelfLifeDays\":15,\"dummy\":true,\"imagePos\":\"40% 86%\",\"name\":\"Orange Zest Bonbon\",\"description\":\"A dark chocolate bonbon with a fresh citrus note.\",\"ingredients\":\"Sample text. To be confirmed by Dark Slush.\"},{\"id\":\"designer-gift-chocolate\",\"category\":\"designer\",\"active\":true,\"sortOrder\":5,\"tags\":[\"special\"],\"image\":\"/images/brand/brand\",\"box6\":true,\"cocoa\":null,\"shelfLifeDays\":15,\"dummy\":true,\"imagePos\":\"70% 56%\",\"name\":\"Designer Gift Chocolate\",\"description\":\"Beautifully moulded chocolates, made to your design.\",\"ingredients\":\"Sample text. To be confirmed by Dark Slush.\"},{\"id\":\"festive-special-box\",\"category\":\"designer\",\"active\":true,\"sortOrder\":6,\"tags\":[\"seasonal\",\"special\"],\"image\":\"/images/brand/brand\",\"box6\":true,\"cocoa\":null,\"shelfLifeDays\":15,\"dummy\":true,\"imagePos\":\"30% 40%\",\"name\":\"Festive Special Box\",\"description\":\"A seasonal assortment made for festive gifting.\",\"ingredients\":\"Sample text. To be confirmed by Dark Slush.\"},{\"id\":\"protein-bites\",\"category\":\"healthy-bites\",\"active\":true,\"sortOrder\":7,\"tags\":[],\"image\":\"/images/brand/brand\",\"box6\":false,\"cocoa\":null,\"shelfLifeDays\":15,\"dummy\":true,\"imagePos\":\"82% 28%\",\"name\":\"Protein Bites\",\"description\":\"Bite-sized goodness with dry fruits, seeds and honey.\",\"ingredients\":\"Dry fruits (cashew, almond, pista, walnut, raisin, dry fig, dates), mixed berries, seeds (pumpkin, sunflower, watermelon), peanut butter, pure honey.\"},{\"id\":\"homemade-protein-bar\",\"category\":\"healthy-bars\",\"active\":true,\"sortOrder\":8,\"tags\":[],\"image\":\"/images/brand/brand\",\"box6\":false,\"cocoa\":null,\"shelfLifeDays\":15,\"dummy\":true,\"imagePos\":\"18% 58%\",\"name\":\"Homemade Protein Bar\",\"description\":\"A wholesome homemade bar with nuts, seeds and dates.\",\"ingredients\":\"Dry fruits (cashew, almond, pista, walnut, raisin, dry fig, dates), seeds (pumpkin, sunflower, watermelon), peanut butter, pure honey.\"}]";
+const waNumber = "919016248483";
+
+// ══════════════════════════════════════════════════════════════════════════════
+// AUTH
+// clientUsers contains only SHA-256 hashes — raw passwords are never here.
+// SHA-256 is one-way: knowing the hash does not reveal the password.
+// Session lives in a JS closure only — page refresh = re-login.
+// ══════════════════════════════════════════════════════════════════════════════
+const USERS    = JSON.parse(clientUsers);
+const PRODUCTS = JSON.parse(clientProducts);
+
+let currentUser = null; // in-memory session only
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+// ── Login form ────────────────────────────────────────────────────────────────
+document.getElementById('login-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const name = document.getElementById('inp-user').value.trim();
+  const pass = document.getElementById('inp-pass').value;
+  const hash = await sha256(pass);
+
+  const match = USERS.find(u => u.n === name && u.h === hash);
+  const err   = document.getElementById('login-error');
+
+  if (match) {
+    currentUser = name;
+    err.classList.remove('show');
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('app').classList.add('show');
+    document.getElementById('topbar-user').textContent = ` · ${name}`;
+    renderStats();
+    renderTable(PRODUCTS);
+  } else {
+    err.classList.add('show');
+    document.getElementById('inp-pass').value = '';
+    document.getElementById('inp-pass').focus();
+  }
+});
+
+// ── Logout ────────────────────────────────────────────────────────────────────
+document.getElementById('logout-btn').addEventListener('click', () => {
+  currentUser = null;
+  document.getElementById('app').classList.remove('show');
+  document.getElementById('login-screen').style.display = '';
+  document.getElementById('inp-user').value = '';
+  document.getElementById('inp-pass').value = '';
+});
+
+// ══════════════════════════════════════════════════════════════════════════════
+// TABS
+// ══════════════════════════════════════════════════════════════════════════════
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// ══════════════════════════════════════════════════════════════════════════════
+// PRODUCTS TABLE
+// ══════════════════════════════════════════════════════════════════════════════
+function renderStats() {
+  const total    = PRODUCTS.length;
+  const active   = PRODUCTS.filter(p => p.active).length;
+  const dummy    = PRODUCTS.filter(p => p.dummy).length;
+  const cats     = [...new Set(PRODUCTS.map(p => p.category))].length;
+  document.getElementById('stats-row').innerHTML = `
+    <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-label">Total products</div></div>
+    <div class="stat-card"><div class="stat-num">${active}</div><div class="stat-label">Active</div></div>
+    <div class="stat-card"><div class="stat-num">${total - active}</div><div class="stat-label">Inactive</div></div>
+    <div class="stat-card"><div class="stat-num">${dummy}</div><div class="stat-label">Sample / dummy</div></div>
+    <div class="stat-card"><div class="stat-num">${cats}</div><div class="stat-label">Categories</div></div>
+  `;
+}
+
+function badgeTags(tags) {
+  if (!tags || tags.length === 0) return '<span style="color:var(--muted)">—</span>';
+  return tags.map(t => `<span class="badge badge--tag">${t}</span>`).join('');
+}
+
+function renderTable(list) {
+  const tbody = document.getElementById('product-tbody');
+  const empty = document.getElementById('no-results');
+  if (list.length === 0) {
+    tbody.innerHTML = '';
+    empty.style.display = '';
+    return;
+  }
+  empty.style.display = 'none';
+  tbody.innerHTML = list.map(p => `
+    <tr>
+      <td title="${p.id}">${p.id}</td>
+      <td><strong>${p.name || '—'}</strong>${p.description ? `<br><span style="color:var(--muted);font-size:.8rem">${p.description}</span>` : ''}</td>
+      <td><span class="badge badge--cat">${p.category}</span></td>
+      <td>${p.cocoa ?? '<span style="color:var(--muted)">—</span>'}</td>
+      <td>${badgeTags(p.tags)}</td>
+      <td>
+        <span class="badge ${p.active ? 'badge--active' : 'badge--inactive'}">${p.active ? 'Active' : 'Inactive'}</span>
+        ${p.dummy ? '<span class="badge badge--dummy" style="margin-left:.3rem">Sample</span>' : ''}
+      </td>
+      <td>${p.shelfLifeDays ? p.shelfLifeDays + ' days' : '—'}</td>
+      <td>${p.box6 ? '✓' : '—'}</td>
+    </tr>
+  `).join('');
+}
+
+// ── Filters ───────────────────────────────────────────────────────────────────
+function applyFilters() {
+  const q      = document.getElementById('filter-search').value.toLowerCase();
+  const cat    = document.getElementById('filter-cat').value;
+  const status = document.getElementById('filter-status').value;
+  let list = PRODUCTS;
+  if (q)      list = list.filter(p => p.id.includes(q) || (p.name || '').toLowerCase().includes(q));
+  if (cat)    list = list.filter(p => p.category === cat);
+  if (status === 'active')   list = list.filter(p => p.active);
+  if (status === 'inactive') list = list.filter(p => !p.active);
+  if (status === 'dummy')    list = list.filter(p => p.dummy);
+  renderTable(list);
+}
+
+['filter-search', 'filter-cat', 'filter-status'].forEach(id =>
+  document.getElementById(id).addEventListener('input', applyFilters));
+
+document.getElementById('clear-filters').addEventListener('click', () => {
+  document.getElementById('filter-search').value = '';
+  document.getElementById('filter-cat').value = '';
+  document.getElementById('filter-status').value = '';
+  renderTable(PRODUCTS);
+});
+
+// ══════════════════════════════════════════════════════════════════════════════
+// ADD PRODUCT FORM
+// ══════════════════════════════════════════════════════════════════════════════
+function toSlug(str) {
+  return str.toLowerCase().trim()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+}
+
+document.getElementById('f-name').addEventListener('input', function () {
+  document.getElementById('f-slug').value = toSlug(this.value);
+});
+
+document.getElementById('add-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name   = document.getElementById('f-name').value.trim();
+  const slug   = document.getElementById('f-slug').value.trim();
+  const cat    = document.getElementById('f-cat').value;
+  const cocoa  = document.getElementById('f-cocoa').value.trim();
+  const tags   = document.getElementById('f-tags').value.trim();
+  const shelf  = document.getElementById('f-shelf').value.trim();
+  const sizes  = document.getElementById('f-sizes').value.trim();
+  const box6   = document.getElementById('f-box6').value;
+  const desc   = document.getElementById('f-desc').value.trim();
+  const ing    = document.getElementById('f-ing').value.trim();
+  const notes  = document.getElementById('f-notes').value.trim();
+  const by     = currentUser || 'admin';
+
+  const msg = [
+    `[Dark Slush Admin — New Product Submission]`,
+    `Submitted by: ${by}`,
+    ``,
+    `Name: ${name}`,
+    `ID/slug: ${slug}`,
+    `Category: ${cat}`,
+    `Cocoa / type: ${cocoa || '—'}`,
+    `Tags: ${tags || '—'}`,
+    `Sizes / pieces: ${sizes || '—'}`,
+    `Shelf life: ${shelf} days`,
+    `Box of 6: ${box6}`,
+    ``,
+    `Description: ${desc || '—'}`,
+    `Ingredients: ${ing || '—'}`,
+    ``,
+    `Notes: ${notes || '—'}`,
+  ].join('\n');
+
+  const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+  document.getElementById('add-success').classList.add('show');
+});
+
+document.getElementById('clear-form-btn').addEventListener('click', () => {
+  document.getElementById('add-form').reset();
+  document.getElementById('f-slug').value = '';
+  document.getElementById('add-success').classList.remove('show');
+});
+})();</script></body></html>
